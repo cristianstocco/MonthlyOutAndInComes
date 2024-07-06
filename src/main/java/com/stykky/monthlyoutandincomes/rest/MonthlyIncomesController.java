@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * made by stykky
- * MISSION: Controller for the monthly outcomes
+ * MISSION: Controller for the monthly incomes
  */
-@RestController()
-public class MonthlyOutcomesController {
+@RestController
+public class MonthlyIncomesController {
 
-	@GetMapping( "/out/getAll" )
+	@GetMapping( "/in/getAll" )
 	public String getAll() {
-		return "the outcomes for the monthly controller";
+		return "the incomes for the monthly controller";
 	}
 	
 }
