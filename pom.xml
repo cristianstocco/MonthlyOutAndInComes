@@ -75,6 +75,11 @@
 			<scope>runtime</scope>
 			<version>2.2.220</version>
 		</dependency>
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-maven-plugin</artifactId>
+			<version>10.14.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
