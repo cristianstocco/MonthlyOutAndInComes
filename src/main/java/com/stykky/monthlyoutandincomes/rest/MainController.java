@@ -49,6 +49,26 @@ public class MainController {
 		}
 		catch( Exception ex ) {
 			response.put("success", false);
+			response.put("error", ex.toString());
+		}
+		
+		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping("/rollback")
+	public ResponseEntity<Object> rollback() {
+		Map<String, Object> response = new HashMap<>();
+		
+		try {
+			InfoResult result = flyway.info().getInfoResult();
+			System.out.println( "ROLLING BACK TO: "+result.database+", WITH SCHEMA: "+result.schemaName+", FROM VERSION: "+result.schemaVersion );
+			flyway.clean();
+			
+			response.put("success", true);
+		}
+		catch( Exception ex ) {
+			response.put("success", false);
+			response.put("error", ex.toString());
 		}
 		
 		return ResponseEntity.ok(response);

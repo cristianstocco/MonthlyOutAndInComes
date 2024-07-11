@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS other (
+	id INT PRIMARY KEY,
+	the_money INT,
+	detail VARCHAR(255)
+);
