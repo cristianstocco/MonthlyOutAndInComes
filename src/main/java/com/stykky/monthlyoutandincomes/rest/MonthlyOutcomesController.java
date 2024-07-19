@@ -30,7 +30,7 @@ public class MonthlyOutcomesController {
 	private OtherDAO otherDAO;
 
 	@GetMapping( "/out/getAll" )
-	public ResponseEntity getAll() {
+	public ResponseEntity<Object> getAll() {
 		Map<String, Object> response = new HashMap<>();
 		
 		List<Shopping> shoppings = shoppingDAO.findAll();
