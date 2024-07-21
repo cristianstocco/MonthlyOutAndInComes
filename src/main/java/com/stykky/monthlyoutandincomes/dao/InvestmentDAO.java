@@ -35,5 +35,11 @@ public class InvestmentDAO implements IInvestmentDAO {
 		
 		return query.getResultList();
 	}
+	
+	@Override
+	@Transactional
+	public void save(Investment investment) {
+		
+	}
 
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.provider.HibernateUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.stykky.monthlyoutandincomes.model.Wage;
 
@@ -19,7 +20,7 @@ import jakarta.transaction.Transactional;
  * made by stykky
  * MISSION: Data Access Object for wage incomes
  */
-@Component
+@Repository
 public class WageDAO implements IWageDAO {
 	
 	private EntityManager entityManager;
@@ -35,6 +36,12 @@ public class WageDAO implements IWageDAO {
 		TypedQuery<Wage> query = entityManager.createQuery("FROM Wage", Wage.class);
 		
 		return query.getResultList();
+	}
+
+	@Override
+	@Transactional
+	public void save(Wage wage) {
+		entityManager.persist(wage);
 	}
 
 }

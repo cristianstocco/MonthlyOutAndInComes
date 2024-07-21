@@ -16,7 +16,7 @@ public class Wage {
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	@Column( name = "id" )
-	private Integer id;
+	private Long id;
 	
 	@Column( name = "the_provider" )
 	private String provider;
@@ -27,18 +27,19 @@ public class Wage {
 	@Column( name = "gained" )
 	private Calendar gained;
 
-	public Wage(Integer id, String provider, Integer money, Calendar gained) {
+	public Wage(Long id, String provider, Integer money, Calendar gained) {
 		super();
 		this.id = id;
 		this.provider = provider;
 		this.money = money;
 		this.gained = gained;
 	}
+	public Wage() {}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -65,7 +66,7 @@ public class Wage {
 
 	@Override
 	public String toString() {
-		return "Wage [id=" + id + ", provider=" + provider + ", money=" + money + ", gained=" + gained + "]";
+		return "Wage [id=" + id + ", provider=" + provider + ", money=" + money + ", gained=" + gained.toString() + "]";
 	}
 	
 }

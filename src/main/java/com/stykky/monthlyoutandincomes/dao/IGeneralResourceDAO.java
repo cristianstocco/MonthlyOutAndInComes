@@ -12,5 +12,7 @@ import java.util.List;
 public interface IGeneralResourceDAO<T> {
 	
 	public List<T> findAll();
+	
+	public void save(T t);
 
 }

@@ -12,6 +12,7 @@ import com.stykky.monthlyoutandincomes.model.Other;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 
 /**
  * made by stykky
@@ -27,10 +28,18 @@ public class OtherDAO implements IOtherDAO {
 		this.entityManager = entityManager;
 	}
 	
+	@Transactional
+	@Override
 	public List<Other> findAll() {
 		TypedQuery<Other> query = entityManager.createQuery( "FROM Other", Other.class );
 		
 		return query.getResultList();
+	}
+	
+	@Transactional
+	@Override
+	public void save(Other other) {
+		
 	}
 
 }
