@@ -53,12 +53,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
-		<!-- SPRING BOOT SECURITY: login for using the app -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
 
 		<!-- DATABASE CONNECTIVITY -->
 		<dependency>
